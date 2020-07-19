@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
   *
   *
@@ -11,11 +10,32 @@ int _printf(const char *format, ...)
 	int cont = 0, i;
 
 	if (format == NULL)
+	return (-1);
+	va_start(list, format);
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		return (-1);
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '%')
+				cont += _putchar('%');
+			else if (valid_format(format[i]))
+				cont += find_function(format[i])(list);
+			else if (format[i] != '\0')
+				cont += _putchar('%') + _putchar(format[i]);
+			else if (format[i] == '\0')
+			{
+				return (-1);
+			}
+			else
+				cont += _putchar('%');
+		}
+		else
+		{
+			cont += _putchar(format[i]);
+		}
 	}
-  	va_start(list, format);
-	cont = (valid_format(format, i));
+	va_end(list);
 	return (cont);
 }
 /**
@@ -23,26 +43,8 @@ int _printf(const char *format, ...)
   *
   *
 */
-int valid_format(const char *format, int i)
+int valid_format(char c)
 {
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (format[i] == '%')
-<<<<<<< HEAD
-			{
-				cont += _putchar('%');
-			}
-=======
-				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
->>>>>>> d08df186defd783782c241b46209ead610793d48
-			else if(format[i] == 's' || format[i] == 'c')
-				cont += _putchar(format[i + 1]);
-		}
-		else
-			cont += _putchar(format[i]);
-	}
-	return (cont);
+	return ('c' == c || 's' == c || 'd' == c
+	|| 'i' == c);
 }
