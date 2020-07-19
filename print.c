@@ -12,10 +12,17 @@ int print_char(va_list params)
 	m = (char) va_arg(params, int);
 	return (write(1, &m, sizeof(char)));
 }
+
 int print_string(va_list params)
 {
 	int i;
 	char *ptr;
+	int save;
 
-	for (i = 0;)
+	tr = va_arg(params, char *);
+	for (i = 0; ptr[i] != '\0'; i++)
+	{
+		save += _putchar(ptr[i]);
+	}
+	return (save);
 }
