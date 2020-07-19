@@ -19,7 +19,7 @@ int (*find_function(char letter))(va_list list)
 	{
 		if (ops[i].format == letter)
 		{
-			return (ops[i].function);x
+			return (ops[i].function);
 		}
 	}
 	return (0);
