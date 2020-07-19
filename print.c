@@ -19,7 +19,7 @@ int print_string(va_list params)
 	char *ptr;
 	int save;
 
-	tr = va_arg(params, char *);
+	ptr = va_arg(params, char *);
 	for (i = 0; ptr[i] != '\0'; i++)
 	{
 		save += _putchar(ptr[i]);
