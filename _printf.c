@@ -15,6 +15,16 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
   	va_start(list, format);
+	cont = (valid_format(format, i));
+	return (cont);
+}
+/**
+  *
+  *
+  *
+*/
+int valid_format(const char *format, int i)
+{
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -24,38 +34,13 @@ int _printf(const char *format, ...)
 			{
 				cont += _putchar('%');
 			}
-			else if (valid_format(format[i]))
+			else if(format[i] == 's' || format[i] == 'c')
 			{
-				cont += find_function(format[i])(list);
-			}
-			else if (format[i] != '\0')
-			{
-				cont += _putchar('%') + _putchar(format[i]);
-			}
-			else if (format[i] == '\0')
-			{
-				return (-1);
-			}
-			else
-			{
-				cont += _putchar('%');
+				cont += _putchar(format[i + 1]);
 			}
 		}
 		else
-		{
 			cont += _putchar(format[i]);
-		}
 	}
-	va_end(list);
 	return (cont);
-}
-/**
-  *
-  *
-  *
-*/
-int valid_format(char c)
-{
-	return ('c' == c || 's' == c || 'd' == c
-	|| 'i' == c);
 }
