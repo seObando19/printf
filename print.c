@@ -31,12 +31,16 @@ int print_string(va_list params)
 {
 	int i;
 	char *ptr;
-	int save;
+	int len = 0;
 
 	ptr = va_arg(params, char *);
-	for (i = 0; ptr[i] != '\0'; i++)
+	if (ptr != NULL)
 	{
-		save += _putchar(ptr[i]);
+		for (i = 0; ptr[i + 1] != '\0'; i++)
+		{
+			len++;
+		}
+		return (write(1, ptr, len));
 	}
-	return (save);
+	return (write(1, "(null)", 6));
 }
