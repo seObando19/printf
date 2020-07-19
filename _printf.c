@@ -17,18 +17,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
   	va_start(list, format);
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] == "%")
-		{
-			i++;
-			if (format[i] == "%")
-			{
-				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
-			}
-		}
-	}
-	return (count);
+	
+	cont = (valid_format(format, i));
+	return (cont);
 }
 /**
   *
@@ -37,5 +28,22 @@ int _printf(const char *format, ...)
 */
 int valid_format(const char *format, int i)
 {
-	
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			if (format[i] == '%')
+			{
+				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
+			}
+			else if(format[i] == 's' || format[i] == 'c')
+			{
+				cont += _putchar(format[i + 1]);
+			}
+		}
+		else
+			cont += _putchar(format[i]);
+	}
+	return (cont);
 }
