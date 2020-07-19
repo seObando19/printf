@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
-  *
-  *
-  *
+  * _printf - entry point
+  *@format:is a character string
+  *Return: the number of characters printed
 */
 int _printf(const char *format, ...)
 {
@@ -39,9 +39,9 @@ int _printf(const char *format, ...)
 	return (cont);
 }
 /**
-  *
-  *
-  *
+  *valid_format - Validate if it is a valid format
+  *@c: char to validate
+  *Return: 1 if is valid or 0 else
 */
 int valid_format(char c)
 {

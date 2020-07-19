@@ -11,9 +11,14 @@ int valid_format(char c);
 int print_char(va_list list);
 int print_string(va_list list);
 int print_integer(va_list list);
+/**
+  *struct typeformat - struct typeformat
+  *@format: format to print
+  *@function: function to execute
+*/
 typedef struct typeformat
 {
 	char format;
 	int (*function)(va_list);
-}_formats;
+} _formats;
 #endif /* _HOLBERTON_H_ */
