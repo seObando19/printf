@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
-#include <stdio.h>
 
 /**
   *
@@ -19,23 +17,45 @@ int _printf(const char *format, ...)
   	va_start(list, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == "%")
+		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == "%")
+			if (format[i] == '%')
 			{
-				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
+				cont += _putchar('%');
+			}
+			else if (valid_format(format[i]))
+			{
+				cont += find_function(format[i])(list);
+			}
+			else if (format[i] != '\0')
+			{
+				cont += _putchar('%') + _putchar(format[i]);
+			}
+			else if (format[i] == '\0')
+			{
+				return (-1);
+			}
+			else
+			{
+				cont += _putchar('%');
 			}
 		}
+		else
+		{
+			cont += _putchar(format[i]);
+		}
 	}
-	return (count);
+	va_end(list);
+	return (cont);
 }
 /**
   *
   *
   *
 */
-int valid_format(const char *format, int i)
+int valid_format(char c)
 {
-	
+	return ('c' == c || 's' == c || 'd' == c
+	|| 'i' == c);
 }
