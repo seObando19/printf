@@ -8,7 +8,8 @@
 int print_integer(va_list params)
 {
 	int integer = va_arg(params, int);
-	int lengthi, num = 0;
+	int lengthi = 0;
+        unsigned int num = 0;
 	int mult = 1;
 
 	if (integer < 0)
