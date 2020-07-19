@@ -31,13 +31,15 @@ int valid_format(const char *format, int i)
 		{
 			i++;
 			if (format[i] == '%')
+<<<<<<< HEAD
 			{
 				cont += _putchar('%');
 			}
+=======
+				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
+>>>>>>> d08df186defd783782c241b46209ead610793d48
 			else if(format[i] == 's' || format[i] == 'c')
-			{
 				cont += _putchar(format[i + 1]);
-			}
 		}
 		else
 			cont += _putchar(format[i]);
