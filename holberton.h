@@ -10,7 +10,7 @@ int (*find_function(char letter))(va_list list);
 int valid_format(char c);
 int print_char(va_list list);
 int print_string(va_list list);
-/* int print_integer(va_list list); */
+int print_integer(va_list list);
 typedef struct typeformat
 {
 	char format;
