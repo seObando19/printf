@@ -34,13 +34,9 @@ int valid_format(const char *format, int i)
 		{
 			i++;
 			if (format[i] == '%')
-			{
 				cont += _putchar('%');  /*Escribe '%' y le suma 1 a cont*/
-			}
 			else if(format[i] == 's' || format[i] == 'c')
-			{
 				cont += _putchar(format[i + 1]);
-			}
 		}
 		else
 			cont += _putchar(format[i]);
