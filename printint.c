@@ -3,7 +3,7 @@
   *print_integer - function for print the numbers
   *according to the format
   *@params:arguments to print
-  *Return:numbers to printed
+  *Return:number of chars and digits printed
 */
 int print_integer(va_list params)
 {

@@ -25,7 +25,7 @@ int print_char(va_list params)
 /**
   *print_string - print to string passed in params
   *@params:arguments to print
-  *Return: string to printed
+  *Return: number of chars printed
 */
 int print_string(va_list params)
 {
