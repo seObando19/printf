@@ -14,7 +14,7 @@ int print_rev(va_list params)
 		i++;
 	lenght = i;
 	newStrg = malloc(sizeof(char) * lenght + 1);
-	if (ptr != NULL && ptr != 0 && newStrg != NULL)
+	if (ptr != NULL || ptr != 0 || newStrg != NULL)
 	{
 		for (a = 0; a <= i; a++)
 		{
