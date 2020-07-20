@@ -33,7 +33,7 @@ int print_string(va_list params)
 	char *ptr;
 	int save;
 
-	ptr = va_arg(params, char *);
+	ptr = va_arg(params, char*);
 	if (ptr != NULL)
 	{
 		for (i = 0; ptr[i] != '\0'; i++)
