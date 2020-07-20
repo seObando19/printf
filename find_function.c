@@ -11,7 +11,8 @@ int (*find_function(const char letter))(va_list list)
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_integer},
-		{'d', print_integer}
+		{'d', print_integer},
+		{'\0', NULL}
 	};
 	int i;
 
