@@ -18,17 +18,25 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
+			{
 				cont += _putchar('%');
+			}
 			else if (valid_format(format[i]))
+			{
 				cont += find_function(format[i])(list);
+			}
 			else if (format[i] != '\0')
+			{
 				cont += _putchar('%') + _putchar(format[i]);
+			}
 			else if (format[i] == '\0')
 			{
 				return (-1);
 			}
 			else
+			{
 				cont += _putchar('%');
+			}
 		}
 		else
 		{
