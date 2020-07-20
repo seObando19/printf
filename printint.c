@@ -14,7 +14,8 @@ int print_integer(va_list params)
 
 	if (integer < 0)
 	{
-		lengthi = _putchar('-');
+		_putchar('-');
+                lengthi++;
 		num = integer * -1;
 	}
 	else
@@ -25,7 +26,8 @@ int print_integer(va_list params)
 	}
 	while (mult != 0)
 	{
-		lengthi = _putchar('0' + num / mult);
+		_putchar('0' + num / mult);
+                lengthi++;
 		num = num % mult;
 		mult = mult / 10;
 	}
