@@ -22,5 +22,5 @@ int (*find_function(const char letter))(va_list list)
 			return (ops[i].function);
 		}
 	}
-	return (0);
+	exit(99);
 }
