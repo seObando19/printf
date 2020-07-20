@@ -31,16 +31,17 @@ int print_string(va_list params)
 {
 	int i;
 	char *ptr;
-	int save;
+	int save = 0;
 
 	ptr = va_arg(params, char*);
 	if (ptr != NULL || ptr != 0)
 	{
 		for (i = 0; ptr[i] != '\0'; i++)
 		{
-			save += _putchar(ptr[i]);
+			/* save += _putchar(ptr[i]); */
+			save++;
 		}
-		return (save);
+		return (write(1, ptr, save));
 	}
 	return (write(1, "(null)", 6));
 }
