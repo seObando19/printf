@@ -7,9 +7,9 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int cont = 0, i;
+	int cont = 0, i = 0;
 
-	if (format == NULL)
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
 	va_start(list, format);
 	for (i = 0; format[i] != '\0'; i++)
