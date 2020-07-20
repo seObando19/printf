@@ -5,7 +5,7 @@
   *@letter: format for print value
   *Return: value printed for the function called
 */
-int (*find_function(char letter))(va_list list)
+int (*find_function(const char letter))(va_list list)
 {
 	_formats ops[] = {
 		{'c', print_char},
