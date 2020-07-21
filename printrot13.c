@@ -25,6 +25,7 @@ int print_rot13(va_list params)
                                 {
                                         _putchar(output[j]);
                                         cont++;
+                                        break;
                                 }
                         }
                         if (!input[j])
