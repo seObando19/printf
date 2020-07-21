@@ -13,6 +13,7 @@ int (*find_function(const char letter))(va_list list)
 		{'i', print_integer},
 		{'d', print_integer},
 		{'r', print_rev},
+                {'R', print_rot13}
 		{'\0', NULL}
 	};
 	int i;
