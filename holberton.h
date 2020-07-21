@@ -12,6 +12,7 @@ int print_char(va_list list);
 int print_string(va_list list);
 int print_integer(va_list list);
 int print_rev(va_list list);
+int print_rot13(va_list params);
 /**
   *struct typeformat - struct typeformat
   *@format: format to print
