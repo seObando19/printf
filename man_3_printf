@@ -26,6 +26,8 @@ FORMAT controls the output.  Interpreted sequences are:
 %d  For print a decimal (base 10) number
 %i  For print an integer a base 10 number
 %%  For print a sing (%)
+%r  For print a string of characters in reverse
+%R  For prints the rot13'ed string
 
 .SH AUTHOR
 .PP
