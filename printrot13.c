@@ -15,26 +15,26 @@ int print_rot13(va_list params)
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	ptr = va_arg(params, char *);
-	if (ptr != NULL)
+	if (ptr == NULL)
 	{
-		for (i = 0; ptr[i]; i++)
+                ptr = "(ahyy)";
+        }
+	for (i = 0; ptr[i]; i++)
+	{
+		for (j = 0; input[j]; j++)
 		{
-			for (j = 0; input[j]; j++)
+			if (input[j] == ptr[i])
 			{
-				if (input[j] == ptr[i])
-				{
-					_putchar(output[j]);
-					cont++;
-					break;
-				}
-			}
-			if (!input[j])
-			{
-				_putchar(ptr[i]);
+				_putchar(output[j]);
 				cont++;
+				break;
 			}
 		}
-		return (cont);
+		if (!input[j])
+		{
+			_putchar(ptr[i]);
+			cont++;
+		}
 	}
-	return (write(1, "(null)", 6));
+	return (cont);
 }
