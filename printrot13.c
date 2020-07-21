@@ -8,33 +8,33 @@
 
 int print_rot13(va_list params)
 {
-        char * ptr;
-        unsigned i, j;
-        int cont;
-        char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *ptr;
+	unsigned int i, j;
+	int cont;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-        ptr = va_arg(params, char *);
-        if (ptr != NULL)
-        {
-                for (i = 0; ptr[i]; i++)
-                {
-                        for (j = 0; input[j]; j++)
-                        {
-                                if (input[j] == ptr[i])
-                                {
-                                        _putchar(output[j]);
-                                        cont++;
-                                        break;
-                                }
-                        }
-                        if (!input[j])
-                        {
-                                _putchar(ptr[i]);
-                                cont++;
-                        }
-                }
-                return (cont);
-        }
-        return (write(1, "(null)", 6));
+	ptr = va_arg(params, char *);
+	if (ptr != NULL)
+	{
+		for (i = 0; ptr[i]; i++)
+		{
+			for (j = 0; input[j]; j++)
+			{
+				if (input[j] == ptr[i])
+				{
+					_putchar(output[j]);
+					cont++;
+					break;
+				}
+			}
+			if (!input[j])
+			{
+				_putchar(ptr[i]);
+				cont++;
+			}
+		}
+		return (cont);
+	}
+	return (write(1, "(null)", 6));
 }
