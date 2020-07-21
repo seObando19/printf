@@ -17,8 +17,8 @@ int print_rot13(va_list params)
 	ptr = va_arg(params, char *);
 	if (ptr == NULL)
 	{
-                ptr = "(ahyy)";
-        }
+		ptr = "(ahyy)";
+	}
 	for (i = 0; ptr[i]; i++)
 	{
 		for (j = 0; input[j]; j++)
