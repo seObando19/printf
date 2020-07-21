@@ -21,7 +21,9 @@ int print_rev(va_list params)
 			newStrg[a] = ptr[lenght];
 			lenght--;
 		}
-		return (write(1, newStrg, a));
+		write(1, newStrg, a);
+		free(newStrg);
+		return (a);
 	}
 	return (write(1, "(null)", 6));
 }
