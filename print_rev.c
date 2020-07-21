@@ -10,20 +10,24 @@ int print_rev(va_list params)
 	char *ptr, *newStrg;
 
 	ptr = va_arg(params, char*);
-	while (ptr[i] != '\0')
-		i++;
-	lenght = i;
-	newStrg = malloc(sizeof(char) * lenght + 1);
-	if (newStrg != NULL)
+	if (ptr != NULL && ptr != 0)
 	{
-		for (a = 0; a <= i; a++)
+		while (ptr[i] != '\0')
+			i++;
+		lenght = i;
+		newStrg = malloc(lenght + 1);
+		if (newStrg != NULL)
 		{
-			newStrg[a] = ptr[lenght];
-			lenght--;
+			for (a = 0; a <= i; a++)
+			{
+				newStrg[a] = ptr[lenght];
+				lenght--;
+			}
+			write(1, newStrg, a);
+			free(newStrg);
+			return (a);
 		}
-		write(1, newStrg, a);
-		free(newStrg);
-		return (a);
+		return (write(1, "(null)", 6));
 	}
 	return (write(1, "(null)", 6));
 }
