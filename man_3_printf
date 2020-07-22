@@ -1,16 +1,13 @@
-.TH "_printf man page"
+.TH _printf 3 "22/07/20" "_printf 1.0" "_printf man page"
+.Dt _printf(3)
 .SH NAME
-
 .B _printf
-\- format and print data in the standar output
+format and print data in the standar output
 
 .SH SYPNOSIS
-.IP
-.I #include "holberton.h"
-.B \_printf
-.RB FORMAT
-.RB [\| ARGUMENTS \|]
-.RB OPTIONS
+.B #include "holberton.h"
+.PP
+int printf(cont char *format, ...);
 
 .SH DESCRIPTION
 .B _printf
@@ -34,10 +31,15 @@ FORMAT controls the output.  Interpreted sequences are:
 .PP
 Written by Juan Esteban Arango and Sebastian Obando Perez at Holberton School.
 
+.SH REPORTING BUGS
+.PP
+Holberton School help: <http://www.holbertonshool.com>
+
 .SH COPYRIGHT
 .PP
 Copyright © 2020
 
-.SH
+.SH SEE ALSO
 .PP
-October 2020 _printf(1)
+See original man of
+.I printf(3)
