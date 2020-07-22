@@ -28,6 +28,7 @@ FORMAT controls the output.  Interpreted sequences are:
 %%  For print a sing (%)
 %r  For print a string of characters in reverse
 %R  For prints the rot13'ed string
+%b  For prints an integer converted to base 2
 
 .SH AUTHOR
 .PP
