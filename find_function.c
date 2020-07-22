@@ -14,11 +14,12 @@ int (*find_function(const char letter))(va_list list)
 		{'d', print_integer},
 		{'r', print_rev},
                 {'R', print_rot13},
+                {'b', print_bin},
 		{'\0', NULL}
 	};
 	int i;
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (ops[i].format == letter)
 		{
