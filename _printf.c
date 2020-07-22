@@ -54,5 +54,5 @@ int _printf(const char *format, ...)
 int valid_format(char c)
 {
 	return ('c' == c || 's' == c || 'd' == c
-	|| 'i' == c || 'r' == c || 'R' == c);
+	|| 'i' == c || 'r' == c || 'R' == c || 'b' == c);
 }
