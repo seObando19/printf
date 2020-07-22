@@ -14,6 +14,13 @@ int print_bin(va_list list)
         int cont = 0;
         integer = va_arg(list, int);
 
+        if (integer == 0)
+        {
+                _putchar('0' + 0);
+                cont++;
+                return (cont);
+        }
+
         while (integer >= 1)
         {
                 if (integer % 2 == 0)
