@@ -8,12 +8,14 @@
 
 int print_bin(va_list list)
 {
-	unsigned int integer;
+	int integer;
 	int out[64];
 	int i = 0, j = 0;
         int cont = 0;
         integer = va_arg(list, int);
 
+        if (integer < 0)
+                return (-1);
         while (integer >= 1)
         {
                 if (integer % 2 == 0)
