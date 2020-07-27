@@ -27,6 +27,27 @@ FORMAT controls the output.  Interpreted sequences are:
 %R  For prints the rot13'ed string
 %b  For prints an integer converted to base 2
 
+%  EXAMPLES CHAR:
+.PP
+input: "Character:[%c]\n", 'H'
+.PP
+output:
+Character:[H]
+.PP
+%  EXAMPLES STRING:
+.PP
+input: "Word:[%s]\n", 'Hello world!'
+.PP
+output:
+Word:[Hello world!]
+
+%  EXAMPLES INT:
+.PP
+input: "number:[%i]\n", 128
+.PP
+output:
+number:[128]
+
 .SH AUTHOR
 .PP
 Written by Juan Esteban Arango and Sebastian Obando Perez at Holberton School.
